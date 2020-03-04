@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
+    @restaurant = Restaurant.all
   end
 
   def show

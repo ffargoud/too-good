@@ -1,2 +1,171 @@
-// Import page-specific CSS files here.
-@import "home";
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin-top: 0px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 10px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  text-decoration: underline solid gray;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.25rem;
+    margin: auto;
+    margin-top: 0 px;
+}
+.nav-pills .nav-link.active {
+    border: 1px solid gray;
+    background-color: lightgray;
+    text-shadow: 1px 1px black;
+}
+.nav-pills .nav-link {
+    font-size: 16px;
+    font-family: 'sans-serif';
+    font-weight: 550;
+    color: #999;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 1px solid gray;
+}
+
+.card .card-header {
+  margin: auto;
+  border-bottom: 1px solid gray;
+}
+
+.nav .nav-link {
+    transition: all 0.3s;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    display: inline-block;
+    color: gray;
+}
+
+.nav-pills .nav-link {
+    border-radius: 0.25rem;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+.card .cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 400px;
+  height: 300px;
+  margin: 20px;
+  display: inline-block;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.card-trip .restaurant-name {
+  margin-left: 10px;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.card-trip .card-specifics {
+  display: inline-flex;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+
+.card-specifics .specific {
+  background: lightgray;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
