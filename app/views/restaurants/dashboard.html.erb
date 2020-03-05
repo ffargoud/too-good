@@ -28,7 +28,7 @@
              <p>
               <% if policy(restaurant).destroy? %>
                 <%= link_to restaurant_path(restaurant.id), method: :delete do %>
-                  <h3 class="btn btn-default">Delete <%= restaurant.name %></h3>
+                  <h3 class="btn btn-default">Delete restaurant <%= restaurant.name %></h3>
                 <% end %>
               <%end%>
             </p>
