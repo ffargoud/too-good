@@ -19,6 +19,14 @@
         </li>
 
         <li class="nav-item dropdown">
+          <% if policy(Restaurant).create? %>
+            <p class="dropdown-item"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  New restaurant
+</button></p>
+          <% end %>
+         </li>
+
+        <li class="nav-item dropdown">
           <%= image_tag "https://www.cstitches.com/wp-content/uploads/2019/05/no_avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -33,3 +41,4 @@
     </ul>
   </div>
 </div>
+            <%= render partial: 'restaurants/modal', new_restaurant: @new_restaurant %>

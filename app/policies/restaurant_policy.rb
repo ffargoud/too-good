@@ -10,6 +10,10 @@ class RestaurantPolicy < ApplicationPolicy
     return true # By default, new is calling create
   end
 
+  def dashboard?
+    true
+  end
+
   def edit?
     record.user == user
   end
