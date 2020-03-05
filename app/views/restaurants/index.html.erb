@@ -1,8 +1,8 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url(https://i.pinimg.com/originals/f9/98/86/f99886a97ba4e7b0aa4d8b33e00b060c.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514516870926-20598973e480?ixlib=rb-1.2.1&auto=format&fit=crop&w=1972&q=80);">
   <div class="container">
     <h1>Order leftover food, save it from being wasted</h1>
     <p>Save money and the environment all in one meal!</p>
-    <a class="btn btn-flat" href="#">Search placeholder</a>
+    <%= render 'shared/search' %>
   </div>
 </div>
 <h2 style="text-align: center">Showing restaurants near Rua Conde Redondo <p style="display: inline; font-size: 18px"><%= link_to "(Change)", edit_user_registration_path %></p></h2>
@@ -22,7 +22,7 @@
       <div class="tab-pane fade active show" id="alert-html" role="tabpanel" aria-labelledby="alert-html-tab">
         <!-- Restaurant cards tab: -->
         <div class="cards">
-        <% @restaurant.each do |restaurant| %>
+        <% @restaurants.each do |restaurant| %>
         <%= link_to restaurant_path(restaurant), class: "resto-card" do %>
           <div class="card-trip">
             <img src="https://berlinfoodstories.com/wp-content/uploads/2020/02/Barra-Berlin-Neukolln-Restaurant-Feature-Food-1000x350.jpg" />
@@ -48,7 +48,7 @@
         <!-- Map tab: -->
         <div class="mapview-container">
           <div class="card-list">
-            <% @restaurant.each do |restaurant| %>
+            <% @restaurants.each do |restaurant| %>
               <%= link_to restaurant_path(restaurant), class: "resto-card" do %>
                 <div class="card-product">
                   <img src="https://berlinfoodstories.com/wp-content/uploads/2020/02/Barra-Berlin-Neukolln-Restaurant-Feature-Food-1000x350.jpg" style="width: 200px"/>
