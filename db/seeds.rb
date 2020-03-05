@@ -21,6 +21,9 @@ end
   Product.create(name: Faker::Food.dish, price: rand(1..25), description: Faker::Food.description)
 end
 
+Basket.create(name: 'Goodies', description: 'Some stuff', date: Date.today, restaurant_id: Restaurant.first.id, stock: 2, price: 6)
+
 puts "Seeded:"
 puts "- a user with 5 restaurants"
 puts "- 10 products"
+puts "- 1 basket"
