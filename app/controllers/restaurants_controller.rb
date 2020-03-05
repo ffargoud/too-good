@@ -2,14 +2,15 @@ class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @restaurant = policy_scope(Restaurant).order(created_at: :asc)
-    #   if params[:search]
-    #     @restaurants = Restaurant.search_by_name_and_category(params[:search])
-    #   else
-    # @restaurants = Restaurant.all
-      # end
-    @restaurants = Restaurant.geocoded # returns restaurants with coordinates
+    @restaurants = policy_scope(Restaurant).order(created_at: :asc)
 
+    if params[:query]
+      @restaurants = Restaurant.search_by_name_and_category(params[:query])
+    else
+      @restaurants = Restaurant.all
+    end
+
+    # @restaurants = Restaurant.geocoded # returns restaurants with coordinates
     @markers = @restaurants.map do |restaurant|
       {
         lat: restaurant.latitude,
