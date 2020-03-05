@@ -42,6 +42,7 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
+    authorize @restaurant
   end
 
   def update
@@ -62,7 +63,7 @@ class RestaurantsController < ApplicationController
   end
 
   private
-  
+
   def params_restaurant
     params.require(:restaurant).permit(:name,:description,:address, :category, :price_range, :rating)
   end
