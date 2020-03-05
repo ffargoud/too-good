@@ -45,7 +45,9 @@ class RestaurantsController < ApplicationController
     redirect_to restaurants_path
   end
 
-private
-def params_restaurant
-  params.require(:restaurant).permit(:name,:description,:address, :category, :price_range, :rating)
+  private
+
+  def params_restaurant
+    params.require(:restaurant).permit(:name,:description,:address, :category, :price_range, :rating)
+  end
 end

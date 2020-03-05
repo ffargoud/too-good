@@ -24,6 +24,7 @@
         <!-- Restaurant cards tab: -->
         <div class="cards">
         <% @restaurant.each do |restaurant| %>
+        <%= link_to restaurant_path(restaurant), class: "resto-card" do %>
           <div class="card-trip">
             <img src="https://berlinfoodstories.com/wp-content/uploads/2020/02/Barra-Berlin-Neukolln-Restaurant-Feature-Food-1000x350.jpg" />
             <div class="card-trip-infos">
@@ -34,18 +35,71 @@
               <h2 class="card-trip-pricing"><%= restaurant.price_range %></h2>
             </div>
             <div class="card-specifics">
-              <p class="specific"><%= restaurant.category %></p>
-              <p class="specific"><%= restaurant.address %></p>
-              <p class="specific"><%= restaurant.rating %><i class="fas fa-star" style="color: #FEC739; text-shadow: 1px 1px gray;"></i></p>
+              <p class="specific"><i class="fas fa-utensils"></i> <%= restaurant.category %></p>
+              <p class="specific"><i class="fas fa-map-marker-alt"></i> <%= restaurant.address %></p>
+              <p class="specific"><i class="fas fa-star" style="color: #FEC739; text-shadow: 1px 1px gray;"></i> <%= restaurant.rating %></p>
             </div>
           </div>
+          <% end %>
         <% end %>
         </div>
         <!-- End of restaurant cards -->
       </div>
       <div class="tab-pane fade" id="alert-css" role="tabpanel" aria-labelledby="alert-css-tab">
         <!-- Map tab: -->
+        <div class="map" style="background: red, height: 600px">
         <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        <p>Map here</p>
+        </div>
         <!-- End of map tab -->
       </div>
     </div>
