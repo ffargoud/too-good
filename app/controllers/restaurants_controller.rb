@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+  skip_after_action :verify_authorized, only:[:edit]
 
   def index
     @restaurant = policy_scope(Restaurant).order(created_at: :asc)
@@ -42,7 +43,6 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-    authorize @restaurant
   end
 
   def update
