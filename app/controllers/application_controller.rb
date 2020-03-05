@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 before_action :authenticate_user!
+before_action :set_new_restaurant
 
   include Pundit
 
@@ -18,6 +19,10 @@ before_action :authenticate_user!
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  def set_new_restaurant
+    @new_restaurant = Restaurant.new
   end
 
 end
