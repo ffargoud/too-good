@@ -104,16 +104,20 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  border-radius: 4px;
 }
 
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   width: 400px;
   height: 300px;
   margin: 20px;
   display: inline-block;
+  &:hover {
+    box-shadow: 2px 2px 15px 5px rgba(0,0,0,0.2);
+  }
 }
 
 .card-trip > img {
@@ -147,6 +151,9 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+
+  text-decoration: none;
+  color: black;
 }
 
 .card-trip-infos .card-trip-user {
@@ -160,6 +167,9 @@
   display: inline-flex;
   justify-content: space-between;
   padding-left: 15px;
+
+  text-decoration: none;
+  color: black;
 }
 
 .card-specifics .specific {
@@ -168,4 +178,8 @@
   padding-right: 4px;
   border-radius: 2px;
   margin-right: 10px;
+}
+
+.cards .resto-card {
+  text-decoration: none;
 }

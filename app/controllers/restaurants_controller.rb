@@ -52,8 +52,8 @@ class RestaurantsController < ApplicationController
       authorize @restaurants
   end
 
-private
-
+  private
+  
   def params_restaurant
     params.require(:restaurant).permit(:name,:description,:address, :category, :price_range, :rating)
   end

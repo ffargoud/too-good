@@ -1,9 +1,11 @@
 class BasketsController < ApplicationController
   skip_before_action :authenticate_user!, only:[:index, :show]
+  skip_after_action :verify_authorized, only:[:index]
 
   def index
     # Will match with the restaurant show page
-  end
+    @basket = policy_scope(Basket).order(created_at: :asc)
+end
 
   def show
     @basket = Basket.find(params[:id])
@@ -15,7 +17,7 @@ class BasketsController < ApplicationController
   end
 
   def create
-    @basket = Basket.new(params_baskets)
+    @basket = current_user.build(params_baskets)
     authorize @basket
     @restaurant.user = current_user
 
@@ -33,6 +35,7 @@ class BasketsController < ApplicationController
   end
 
   def destroy
+
   end
 
 private
