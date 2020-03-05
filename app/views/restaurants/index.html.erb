@@ -5,7 +5,7 @@
     <a class="btn btn-flat" href="#">Search placeholder</a>
   </div>
 </div>
-
+<h2 style="text-align: center">Showing restaurants near Rua Conde Redondo <p style="display: inline; font-size: 18px"><%= link_to "(Change)", edit_user_registration_path %></p></h2>
 <div class="card">
   <div class="card-header no-border bg-white pb-0">
     <ul class="nav nav-pills lavalamp mb-2" id="alert-tab" role="tablist">
@@ -17,7 +17,6 @@
       </li>
     </ul>
   </div>
-
   <div class="card-body">
     <div class="tab-content" id="alert-tabContent">
       <div class="tab-pane fade active show" id="alert-html" role="tabpanel" aria-labelledby="alert-html-tab">
@@ -47,58 +46,34 @@
       </div>
       <div class="tab-pane fade" id="alert-css" role="tabpanel" aria-labelledby="alert-css-tab">
         <!-- Map tab: -->
-        <div class="map" style="background: red, height: 600px">
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
-        <p>Map here</p>
+        <div class="mapview-container">
+          <div class="card-list">
+            <% @restaurant.each do |restaurant| %>
+              <%= link_to restaurant_path(restaurant), class: "resto-card" do %>
+                <div class="card-product">
+                  <img src="https://berlinfoodstories.com/wp-content/uploads/2020/02/Barra-Berlin-Neukolln-Restaurant-Feature-Food-1000x350.jpg" style="width: 200px"/>
+                  <div class="card-product-infos">
+                    <h2 class="product-title"><%= restaurant.name %></h2>
+                    <p>Product description with <strong>relevant info</strong> only.</p>
+                  </div>
+                  <div class="card-product-specifics">
+                    <p class="product-specific">
+                      <% restaurant.rating.times do %>
+                        <i class="fas fa-star" style="color: #FEC739; text-shadow: 1px 1px gray;"></i>
+                      <% end %>
+                    </p>
+                    <p class="product-specific"><i class="fas fa-utensils"></i> <%= restaurant.category %></p>
+                    <p class="product-specific"><i class="fas fa-map-marker-alt"></i> <%= restaurant.address %></p>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <div
+            id="map"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          ></div>
         </div>
         <!-- End of map tab -->
       </div>
