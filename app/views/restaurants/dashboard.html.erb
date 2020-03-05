@@ -1,0 +1,38 @@
+<h1 style ="color:purple; margin-top: 20px; margin-bottom:20px;">My dashboard</h1>
+
+
+    <% @restaurants.each do |restaurant| %>
+      <div class="card-trip">
+        <%=link_to restaurant_path(restaurant), class: "image-container" do %>
+          <% if restaurant.photo.attached? %>
+             <div class="image">
+              <%= cl_image_tag restaurant.photo.key,height: 300, width: 400, crop: :fill, class: "img-rounded" %>
+            </div>
+          <% else %>
+            <div class="image">
+              <%= cl_image_tag "https://res.cloudinary.com/dnie1qfbq/image/upload/v1582631708/samples/food/pot-mussels.jpg", height: 300, width: 400, crop: :fill, class: "img-rounded" %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+           <div class="card-trip-infos">
+            <h2 class="myrestaurant-name"><%= restaurant.name %></h2>
+            <p>
+              <% if policy(restaurant).edit? %>
+                <%= link_to edit_restaurant_path(restaurant.id) do %>
+                  <h3 class="btn btn-default">Change restaurant details</h3>
+                <% end %>
+              <%end%>
+            </p>
+             <p>
+              <% if policy(restaurant).destroy? %>
+                <%= link_to restaurant_path(restaurant.id), method: :delete do %>
+                  <h3 class="btn btn-default">Delete <%= restaurant.name %></h3>
+                <% end %>
+              <%end%>
+            </p>
+          </div>
+        <%end%>
+
+

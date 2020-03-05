@@ -26,7 +26,7 @@ class RestaurantsController < ApplicationController
     authorize @restaurant
 
     if @restaurant.save
-      redirect_to restaurants_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -41,12 +41,19 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
+    @restaurant = Restaurant.find(params[:id])
+    authorize @restaurant
     @restaurant.destroy
     redirect_to restaurants_path
   end
 
-  private
+  def dashboard
+      @restaurants = Restaurant.where(user_id: current_user)
+      authorize @restaurants
+  end
 
+  private
+  
   def params_restaurant
     params.require(:restaurant).permit(:name,:description,:address, :category, :price_range, :rating)
   end

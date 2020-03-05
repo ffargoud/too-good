@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :restaurants
+
+  get 'dashboard', to: 'restaurants#dashboard', as: 'dashboard'
+
 end
