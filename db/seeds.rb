@@ -4,16 +4,17 @@ price_ranges = ['$', '$$', '$$$']
 
 puts "Destroying database"
 
+Basket.destroy_all
 Restaurant.destroy_all
 Product.destroy_all
 
 puts "Seeding fresh new stuff..."
 
-User.create(email: 'test@gmail.com', role: 'owner', password: '123456')
+User.create(email: 'test@gmail.com', role: 'owner', password: '123456', admin: true)
 
 5.times do
   restaurant = Restaurant.create(name: Faker::Restaurant.name, category: Faker::Restaurant.type,
-  description: Faker::Restaurant.description, rating: rand(1..5),
+  description: Faker::Restaurant.description, rating: rand(1.0..5.0),
   address: Faker::Address.street_address, user_id: 1, price_range: price_ranges.sample)
 end
 
