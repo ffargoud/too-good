@@ -15,7 +15,7 @@ User.create(email: 'test@gmail.com', role: 'owner', password: '123456', admin: t
 5.times do
   restaurant = Restaurant.create(name: Faker::Restaurant.name, category: Faker::Restaurant.type,
   description: Faker::Restaurant.description, rating: rand(1.0..5.0),
-  address: Faker::Address.street_address, user_id: User.first, price_range: price_ranges.sample)
+  address: Faker::Address.street_address, user_id: User.first.id, price_range: price_ranges.sample)
 end
 
 10.times do
