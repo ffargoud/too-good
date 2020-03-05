@@ -4,8 +4,8 @@ price_ranges = ['$', '$$', '$$$']
 
 puts "Destroying database"
 
-# Basket.destroy_all
-# Restaurant.destroy_all
+Basket.destroy_all
+Restaurant.destroy_all
 Product.destroy_all
 
 puts "Seeding fresh new stuff..."
