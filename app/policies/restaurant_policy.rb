@@ -15,7 +15,7 @@ class RestaurantPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+  true
   end
 
   def update?
@@ -24,6 +24,10 @@ class RestaurantPolicy < ApplicationPolicy
 
   def destroy?
     user_is_owner_or_admin?
+  end
+
+  def show?
+    true
   end
 
 private
