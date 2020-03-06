@@ -1,2 +1,22 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<%= render 'shared/navbar', new_restaurant: @new_restaurant %>
+
+<div class="container">
+  <div class="title">
+    <h1 style ="color:#E16B33; margin-top: 20px; margin-bottom:20px; text-align: center;"><%= @restaurant.name %></h1>
+  </div>
+
+  <div class="sub-container">
+  <div class="carousel">
+    <%= render 'shared/carousel' =%>
+  </div>
+
+  <div class="show-restaurant">
+    <h4 class="myrestaurant-description"><%= @restaurant.description %></h4>
+    <h4 class="myrestaurant-description"><%= @restaurant.price_range %></h4>
+    <h4 class="myrestaurant-description"><%= @restaurant.category %></h4>
+  </div>
+  </div>
+</div>
+
+
+
