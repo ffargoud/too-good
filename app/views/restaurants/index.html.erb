@@ -58,8 +58,12 @@
                   </div>
                   <div class="card-product-specifics">
                     <p class="product-specific">
+                      <% if restaurant.rating.nil? %>
+                        <% "No rating for now" %>
+                      <% else %>
                       <% restaurant.rating.times do %>
                         <i class="fas fa-star" style="color: #FEC739; text-shadow: 1px 1px gray;"></i>
+                      <% end %>
                       <% end %>
                     </p>
                     <p class="product-specific"><i class="fas fa-utensils"></i> <%= restaurant.category %></p>

@@ -20,10 +20,8 @@
             <h2 class="myrestaurant-name"><%= restaurant.name %></h2>
             <p>
               <% if policy(restaurant).edit? %>
-                <%= link_to edit_restaurant_path(restaurant.id) do %>
-                  <h3 class="btn btn-default">Change restaurant details</h3>
-                <% end %>
-              <%end%>
+               <h3 class="btn btn-default"><button id= "ModalUpdate" type="button" data-toggle="modal" data-target="#exampleModalCenter">Change restaurant details</button></p>
+               <% end %>
             </p>
              <p>
               <% if policy(restaurant).destroy? %>
