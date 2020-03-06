@@ -1,12 +1,15 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514516870926-20598973e480?ixlib=rb-1.2.1&auto=format&fit=crop&w=1972&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.1)), url(https://images.unsplash.com/photo-1514516870926-20598973e480?ixlib=rb-1.2.1&auto=format&fit=crop&w=1972&q=80);">
+  <%= render 'shared/navbar', new_restaurant: @new_restaurant %>
   <div class="container">
-    <h1>Order leftover food, save it from being wasted</h1>
+    <h1 style="color: #E16B33"><strong style="color: black">ZERO</strong> Food to Waste</h1>
     <p>Save money and the environment all in one meal!</p>
     <%= render 'shared/search' %>
   </div>
 </div>
-<h2 style="text-align: center">Showing restaurants near Rua Conde Redondo <p style="display: inline; font-size: 18px"><%= link_to "(Change)", edit_user_registration_path %></p></h2>
-<div class="card">
+<!-- <h2 style="text-align: center">Showing restaurants near Rua Conde Redondo <p style="display: inline; font-size: 18px"><%= link_to "(Change)", edit_user_registration_path %></p></h2>
+ --><div class="card">
+  <h2 class="card-container-title"><strong>Available today</strong></h2>
+  <!-- Start of tabs -->
   <div class="card-header no-border bg-white pb-0">
     <ul class="nav nav-pills lavalamp mb-2" id="alert-tab" role="tablist">
       <li class="nav-item lavalamp-item" style="z-index: 5; position: relative;">
@@ -17,6 +20,7 @@
       </li>
     </ul>
   </div>
+  <!-- End of tabs -->
   <div class="card-body">
     <div class="tab-content" id="alert-tabContent">
       <div class="tab-pane fade active show" id="alert-html" role="tabpanel" aria-labelledby="alert-html-tab">
@@ -31,12 +35,18 @@
                 <h2 class='restaurant-name'><%= restaurant.name %></h2>
                 <p> <%= restaurant.description[0..100]... %></p>
               </div>
-              <h2 class="card-trip-pricing"><%= restaurant.price_range %></h2>
+              <% unprice = 3 - restaurant.price_range.length %>
+              <h2 class="card-trip-pricing" style="color: #F2C94C">
+                <%= restaurant.price_range %>
+                <% unprice.times do %>
+                  <h2 style="display:inline; color: #F0EBE5">$</h2>
+                <% end %>
+              </h2>
             </div>
             <div class="card-specifics">
-              <p class="specific"><i class="fas fa-utensils"></i> <%= restaurant.category %></p>
-              <p class="specific"><i class="fas fa-map-marker-alt"></i> <%= restaurant.address %></p>
-              <p class="specific"><i class="fas fa-star" style="color: #FEC739; text-shadow: 1px 1px gray;"></i> <%= restaurant.rating %></p>
+              <p class="specific"><i class="fas fa-utensils" style="color: #D94630"></i> <%= restaurant.category %></p>
+              <p class="specific"><i class="fas fa-map-marker-alt" style="color: #D94630"></i> <%= restaurant.address %></p>
+              <p class="specific"><i class="fas fa-star" style="color: #F2C94C; text-shadow: 1px 1px 1px gray"></i> <%= restaurant.rating %>/5</p>
             </div>
           </div>
           <% end %>
@@ -61,13 +71,17 @@
                       <% if restaurant.rating.nil? %>
                         <% "No rating for now" %>
                       <% else %>
-                      <% restaurant.rating.times do %>
-                        <i class="fas fa-star" style="color: #FEC739; text-shadow: 1px 1px gray;"></i>
-                      <% end %>
+                        <% unstar = 5 - restaurant.rating %>
+                        <% restaurant.rating.times do %>
+                          <i class="fas fa-star" style="color: #FEC739; text-shadow: 1px 1px gray;"></i>
+                        <% end %>
+                        <% unstar.times do %>
+                          <i class="fas fa-star" style="color: #FEC739; display:inline; color: #F0EBE5"></i>
+                        <% end %>
                       <% end %>
                     </p>
-                    <p class="product-specific"><i class="fas fa-utensils"></i> <%= restaurant.category %></p>
-                    <p class="product-specific"><i class="fas fa-map-marker-alt"></i> <%= restaurant.address %></p>
+                    <p class="product-specific"><i class="fas fa-utensils" style="color: #D94630"></i> <%= restaurant.category %></p>
+                    <p class="product-specific"><i class="fas fa-map-marker-alt" style="color: #D94630"></i> <%= restaurant.address %></p>
                   </div>
                 </div>
               <% end %>
