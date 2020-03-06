@@ -1,11 +1,13 @@
-<h1 style ="color:purple; margin-top: 20px; margin-bottom:20px;">My dashboard</h1>
+<%= render 'shared/navbar', new_restaurant: @new_restaurant %>
+
+<h1 style ="color:#E16B33; margin-top: 20px; margin-bottom:20px;">My dashboard</h1>
 
 
 
     <% @restaurants.each do |restaurant| %>
       <div class="card-trip">
         <%=link_to restaurant_path(restaurant.id), class: "image-container" do %>
-          <% if restaurant.photos.attached? %>
+          <% if restaurant.photo.attached? %>
              <div class="image">
               <%= cl_image_tag restaurant.photo.key,height: 300, width: 400, crop: :fill, class: "img-rounded" %>
             </div>
