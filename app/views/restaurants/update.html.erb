@@ -1,2 +1,12 @@
-<h1>Restaurants#update</h1>
-<p>Find me in app/views/restaurants/update.html.erb</p>
+    <%= simple_form_for(@restaurant) do |f| %>
+
+        <%= f.input :photo, as: :file %>
+        <%= f.input :name, :label=>"Restaurant name" %>
+        <%= f.input :description, :label=>"Restaurant description" %>
+        <%= f.input :address, :label=>"Restaurant address" %>
+        <%= f.input :category, :label=>"Food category" %>
+
+        <%=f.submit "Edit my restaurant"%>
+  <%end%>
+
+

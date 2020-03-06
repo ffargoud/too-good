@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-  skip_after_action :verify_authorized, only:[:edit]
+  skip_after_action :verify_authorized, only:[:it]
 
   def index
     @restaurants = policy_scope(Restaurant).order(created_at: :asc)
@@ -44,18 +44,22 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
+    @restaurant = Restaurant.find(params[:id])
+    authorize @restaurant
   end
 
   def update
+    @restaurant = Restaurant.find(params[:id])
+    authorize @restaurant
     @restaurant.update(params_restaurant)
-    redirect_to restaurants_path
+    redirect_to dashboard_path
   end
 
   def destroy
     @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
     @restaurant.destroy
-    redirect_to restaurants_path
+    redirect_to dashboard_path
   end
 
   def dashboard
@@ -66,6 +70,6 @@ class RestaurantsController < ApplicationController
   private
 
   def params_restaurant
-    params.require(:restaurant).permit(:name,:description,:address, :category, :price_range, :rating)
+    params.require(:restaurant).permit(:name,:description,:address, :category, :price_range, :rating, :photos)
   end
 end
