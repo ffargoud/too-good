@@ -1,21 +1,25 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  background-position: 100% 40%;
+  // padding: 150px 0;
   margin-top: 0px;
+  height: 620px;
+  .container {
+    padding-top: 250px;
+  }
 }
 
 .banner h1 {
   margin: 0;
-  color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-style: normal;
   font-weight: bold;
 }
 
 .banner p {
   font-size: 20px;
-  color: white;
+  color: black;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
@@ -24,28 +28,13 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #E16B33;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #1BCB7F;
+  background: #D94630;
   color: white;
-}
-
-.btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
-  border-radius: 10px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.btn-ghost:hover {
-  opacity: 1;
-  text-decoration: underline solid gray;
 }
 
 .card {
@@ -63,22 +52,34 @@
 }
 .nav-pills .nav-link.active {
     border: 1px solid gray;
-    background-color: lightgray;
+    background-color: #E16B33;
     text-shadow: 1px 1px black;
+    color: white;
 }
 .nav-pills .nav-link {
     font-size: 16px;
     font-family: 'sans-serif';
-    font-weight: 550;
+    font-weight: 300;
     color: #999;
     margin-left: 2px;
     margin-right: 2px;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
+}
+
+#alert-html-tab {
+  margin-left: 100px;
 }
 
 .card .card-header {
-  margin: auto;
-  border-bottom: 1px solid gray;
+  // border-bottom: 1px solid gray;
+  margin-left: 0px;
+}
+
+.card .card-container-title {
+  color: #E16B33;
+  margin-left: 120px;
+  font-size: 45px;
+  margin-top: 40px
 }
 
 .nav .nav-link {
@@ -88,7 +89,7 @@
     transition-timing-function: ease;
     transition-delay: 0s;
     display: inline-block;
-    color: gray;
+    color: black;
 }
 
 .nav-pills .nav-link {
@@ -136,6 +137,7 @@
 
 .card-trip .restaurant-name {
   margin-left: 10px;
+  color: #D94630;
 }
 
 .card-trip p {
@@ -181,7 +183,7 @@
   margin-right: 10px;
 }
 
-.resto-card {
+a.resto-card {
   text-decoration: none;
 }
 
@@ -204,6 +206,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: #D94630;
 }
 
 .card-product p {
@@ -257,7 +260,7 @@
       }
 
       .card-product-specifics {
-        margin-left: 220px;
+        margin-left: 150px;
 
         .product-specific {
           font-size: 18px;

@@ -1,9 +1,17 @@
 .navbar-lewagon {
+  border-width: 0px;
+  -webkit-box-shadow: 0px 0px;
+  box-shadow: 0px 0px;
+  background-color: rgba(0,0,0,0.0);
+  background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+  background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+  background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
   justify-content: space-between;
-  background: white;
-  box-shadow: 0px 3px 3px 0px lightgray;
   position: sticky;
   top: 0;
+  .nav-item {
+    margin-left: 10px;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -28,19 +36,4 @@
   font-size: 24px;
   margin-block-end: 0;
   margin-left: 45px;
-}
-
-.btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
-  border-radius: 10px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.btn-ghost:hover {
-  opacity: 1;
-  text-decoration: underline solid gray;
 }
