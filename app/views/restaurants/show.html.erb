@@ -1,22 +1,24 @@
 <%= render 'shared/navbar', new_restaurant: @new_restaurant %>
 
-<div class="container">
-  <div class="title">
-    <h1 style ="color:#E16B33; margin-top: 20px; margin-bottom:20px; text-align: center;"><%= @restaurant.name %></h1>
+
+<div class="banner-container">
+
+  <div class="rest-banner">
+    <img src="https://berlinfoodstories.com/wp-content/uploads/2020/02/Barra-Berlin-Neukolln-Restaurant-Feature-Food-1000x350.jpg" />
   </div>
 
-  <div class="sub-container">
-  <div class="carousel">
-    <%= render 'shared/carousel' =%>
-  </div>
-
-  <div class="show-restaurant">
-    <h4 class="myrestaurant-description"><%= @restaurant.description %></h4>
-    <h4 class="myrestaurant-description"><%= @restaurant.price_range %></h4>
-    <h4 class="myrestaurant-description"><%= @restaurant.category %></h4>
-  </div>
-  </div>
 </div>
 
+<div class="show-body">
 
+  <div class="title-info">
+    <h1><%= @restaurant.name %></h1>
+    <p> <%= @restaurant.category %></p>
+  </div>
 
+  <div class="address-info">
+    <h3><%= @restaurant.address %></h3>
+    <p><%= Insert distance from user location here %></p>
+  </div>
+
+</div>

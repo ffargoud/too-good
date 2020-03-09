@@ -1,0 +1,48 @@
+// .carousel {
+//   width: 80%;
+//   margin: auto;
+//   height: 400px;
+// }
+.banner-container {
+  margin: auto;
+  background: white;
+  width: 90%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.rest-banner {
+  padding: 4px;
+  border-radius: 4px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 4px;
+  }
+}
+
+.show-body {
+  width: 90%;
+  margin: auto;
+  border-radius: 4px;
+  background:white;
+  height: 1400px;
+  display: flex;
+
+  h1 {
+    color: #E16B33;
+    font-weight: 800;
+    margin-left: 100px;
+
+  .address-info {
+    display: inline-block;
+  }
+  }
+}
