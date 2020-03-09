@@ -1,9 +1,10 @@
 <%= render 'shared/navbar' %>
 
-<h1>Products</h1>
+<div class="container">
+  <h1>Products</h1>
 
 
-<% @products.each do |product| %>
+  <% @products.each do |product| %>
     <div class="card-product">
       <img src="https://res.cloudinary.com/dnie1qfbq/image/upload/v1582631707/samples/food/dessert.jpg" />
         <div class="card-product-infos">
@@ -11,12 +12,17 @@
          <p><%= product.description %></p>
          <p><%= product.price %>€</p>
          <%= link_to restaurant_product_path(params[:restaurant_id], product.id), method: :delete do %>
-                <h3 class="btn btn-default">Delete <%= product.name %></h3>
+                <h3 class="btn btn-default" >Delete <%= product.name %></h3>
           <% end %>
         </div>
-    </div>
-  <% end %>
+     </div>
+    <% end %>
 
-  <%= link_to "Dashboard",dashboard_path, class: "btn btn-flat", style: "margin-bottom:100px, background: #D94630;" %>
+  <br>
+
+  <%= link_to "Dashboard", dashboard_path, class: "btn btn-flat", style: "margin-bottom:100px, background: #D94630;" %>
+
+  <%= link_to "Add product", new_restaurant_product_path(@restaurant.id), class: "btn btn-flat", style: "margin-bottom:100px, background: #D94630;" %>
 
 
+</div>
