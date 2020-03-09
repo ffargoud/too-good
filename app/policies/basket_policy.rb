@@ -6,7 +6,11 @@ class BasketPolicy < ApplicationPolicy
   end
 
   def new?
-    true # Need to be changed
+  true
+  end
+
+  def create?
+  record.restaurant.user == user || user.admin
   end
 
   def show?

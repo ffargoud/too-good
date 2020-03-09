@@ -13,16 +13,18 @@ end
 
   def new
     @basket = Basket.new
+    @restaurant = Restaurant.find(params[:restaurant_id])
     authorize @basket
+
   end
 
   def create
-    @basket = current_user.build(params_baskets)
+    @basket = Basket.new(params_baskets)
+    @basket.restaurant = Restaurant.find(params[:restaurant_id])
     authorize @basket
-    @restaurant.user = current_user
 
     if @basket.save
-      redirect_to baskets_show_path
+      redirect_to restaurant_baskets_path
     else
       render :new
     end
@@ -41,6 +43,6 @@ end
 private
 
   def params_baskets
-    params.require(:basket).permit(:price, :description, :date, :name, :stock, :restaurant_id)
+    params.require(:basket).permit(:name, :price, :description, :date, :stock, :restaurant_id)
   end
 end

@@ -38,6 +38,10 @@
                 <h3 class="btn btn-default">Delete <%= restaurant.name %></h3>
                   <% end %>
               <%end%>
+
+            <%= link_to new_restaurant_basket_path(restaurant.id) do %>
+              <h3 class="btn btn-default">Add a Basket</h3>
+                  <% end %>
           </p>
         </div>
       <%end%>
