@@ -10,15 +10,45 @@
 </div>
 
 <div class="show-body">
+  <div class="title-address">
 
-  <div class="title-info">
-    <h1><%= @restaurant.name %></h1>
-    <p> <%= @restaurant.category %></p>
+    <div class="title-info">
+      <h1><%= @restaurant.name %></h1>
+      <p><i class="fas fa-utensils" style="color: #D94630"></i> <%= @restaurant.category %></p>
+    </div>
+
+    <div class="address-info">
+      <h3><i class="fas fa-map-marker-alt" style="color: #D94630"></i> <%= @restaurant.address %></h3>
+      <p>Insert distance from user location here</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="description">
+
+  <div class="content-box">
+    <p><i class="fas fa-shopping-bag" style="color: #D94630"></i> At closing time, the employees at <%= @restaurant.name %> will use leftover food items to make baskets.</p>
+    <p><i class="fas fa-shopping-bag" style="color: #D94630"></i> The products in these baskets and their availability changes daily.</p>
+    <p><i class="fas fa-shopping-bag" style="color: #D94630"></i> At <%= @restaurant.name %> you can expect to find some of the following products: x, y, z.</p>
   </div>
 
-  <div class="address-info">
-    <h3><%= @restaurant.address %></h3>
-    <p><%= Insert distance from user location here %></p>
+  <div class="cart">
+    <h2>Cart</h2>
+
+    <div class="cart-items">
+      <p>ITEM</p>
+      <p>ITEM</p>
+      <p>ITEM</p>
+      <p>ITEM</p>
+      <p>ITEM</p>
+      <p>ITEM</p>
+    </div>
+
+    <%= link_to "Checkout", "#", class: "btn btn-flat" %>
   </div>
 
+</div>
+<div class="basket-cards">
+  BASKET CARD
 </div>

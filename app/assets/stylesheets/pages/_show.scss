@@ -29,20 +29,80 @@
 }
 
 .show-body {
+  padding-top: 10px;
   width: 90%;
   margin: auto;
-  border-radius: 4px;
   background:white;
-  height: 1400px;
   display: flex;
 
-  h1 {
-    color: #E16B33;
-    font-weight: 800;
-    margin-left: 100px;
+  .title-address {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
-  .address-info {
-    display: inline-block;
+    .title-info {
+      margin-left: 100px;
+
+      h1 {
+        font-weight: 800;
+        color: #E16B33;
+      }
+    }
   }
+}
+
+.show-body .address-info {
+  display: inline-block;
+  margin-right: 100px;
+
+  p {
+    color: gray;
   }
+}
+
+.description {
+  background: white;
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+
+  .content-box {
+    border: 1px solid lightgray;
+    padding: 15px;
+    width: 70%;
+    border-radius: 4px;
+
+    p {
+      margin-left: 10px;
+    }
+  }
+
+  .cart {
+    width: 25%;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      color: #E16B33;
+    }
+
+    .btn-flat {
+      margin-left: 160px;
+    }
+
+    .cart-items {
+      height: 75%;
+    }
+  }
+}
+
+.basket-cards {
+  background: white;
+  margin: auto;
+  width: 90%;
+  height: 200px;
 }
