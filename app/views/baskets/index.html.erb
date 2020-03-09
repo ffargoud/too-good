@@ -1,2 +1,21 @@
-<h1>Baskets#index</h1>
-<p>Find me in app/views/baskets/index.html.erb</p>
+<%= render 'shared/navbar' %>
+
+<h1>Baskets</h1>
+
+
+<% @baskets.each do |basket| %>
+    <div class="card-product">
+      <img src="https://res.cloudinary.com/dnie1qfbq/image/upload/v1583754005/basket1_muou5x.jpg" />
+        <div class="card-product-infos">
+        <h2><%= basket.name %></h2>
+         <p><%= basket.description %></p>
+         <p><%= basket.price %>€</p>
+<!--          <%#= link_to restaurant_product_path(product.restaurant.id), method: :delete do %>
+                <h3 class="btn btn-default">Delete <%#= product.name %></h3>
+                  <%# end %> -->
+        </div>
+    </div>
+  <% end %>
+
+    <%= link_to "Dashboard",dashboard_path, class: "btn btn-flat", style: "margin-bottom:100px, background: #D94630;" %>
+

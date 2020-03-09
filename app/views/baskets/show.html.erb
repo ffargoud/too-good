@@ -1,2 +1,12 @@
 <h1>Baskets#show</h1>
 <p>Find me in app/views/baskets/show.html.erb</p>
+
+  <div class="card-basket">
+    <%= cl_image_tag @basket.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="card-basket-infos">
+    <%= basket.name %>
+    <%= basket.basket_products %>
+    <%= basket.description %>
+    </div>
+</div>
+
