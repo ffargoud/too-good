@@ -7,7 +7,7 @@ class RestaurantPolicy < ApplicationPolicy
   end
 
   def create?
-    return true # By default, new is calling create
+    true # By default, new is calling create
   end
 
   def dashboard?
