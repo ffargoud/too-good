@@ -198,7 +198,7 @@ a.resto-card {
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 200px;
   object-fit: cover;
 }
 
@@ -228,8 +228,8 @@ a.resto-card {
     display: inline-block;
     border: 1px solid lightgray;
     border-radius: 4px;
-    width: 50%;
-    height: 600px;
+    width: 40%;
+    height: 55vh;
     box-shadow: 0 0 15px lightgray;
     position: sticky;
     top: 0;
@@ -237,30 +237,44 @@ a.resto-card {
 
   .card-list {
     display: inline;
-    width: 50%;
+    width: 60%;
 
     .card-product {
       margin-bottom: 15px;
       margin-right: 10px;
       border-radius: 4px;
       height: 200px;
+      display: flex;
+      justify-content: space-between;
 
       &:hover {
         box-shadow: 2px 2px 15px 5px rgba(0,0,0,0.2);
       }
 
-      .card-product-infos {
-        text-decoration: none;
-        color: black;
+      .img-title {
+        display:flex;
+        width: 400px;
+
+        .card-product-img {
+          width: 200px;
+          height: 200px;
+        }
+
+        .card-product-infos {
+          text-decoration: none;
+          color: black;
+          width: 300px;
 
         .product-title {
           font-size: 24px;
-          margin-bottom: 100px;
         }
       }
 
+
+      }
+
       .card-product-specifics {
-        margin-left: 150px;
+        width: 40%;
 
         .product-specific {
           font-size: 18px;
