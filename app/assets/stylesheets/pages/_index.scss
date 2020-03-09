@@ -253,7 +253,7 @@ a.resto-card {
 
       .img-title {
         display:flex;
-        width: 400px;
+        width: 600px;
 
         .card-product-img {
           width: 200px;
@@ -263,7 +263,9 @@ a.resto-card {
         .card-product-infos {
           text-decoration: none;
           color: black;
-          width: 300px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
 
         .product-title {
           font-size: 24px;
@@ -274,7 +276,7 @@ a.resto-card {
       }
 
       .card-product-specifics {
-        width: 40%;
+        width: 250px;
 
         .product-specific {
           font-size: 18px;
