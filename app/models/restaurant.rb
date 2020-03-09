@@ -1,6 +1,8 @@
 class Restaurant < ApplicationRecord
   belongs_to :user
-  has_many :basket
+  has_many :baskets
+  has_many :products
+
   has_one_attached :photo
 
   geocoded_by :address

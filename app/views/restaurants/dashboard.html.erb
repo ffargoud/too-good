@@ -39,9 +39,22 @@
                   <% end %>
               <%end%>
 
-            <%= link_to new_restaurant_basket_path(restaurant.id) do %>
-              <h3 class="btn btn-default">Add a Basket</h3>
+             <%= link_to restaurant_baskets_path(restaurant.id) do %>
+              <h3 class="btn btn-default"><%= restaurant.name %> baskets</h3>
                   <% end %>
+
+            <%= link_to new_restaurant_basket_path(restaurant.id) do %>
+              <h3 class="btn btn-default">Add a basket</h3>
+                  <% end %>
+
+            <%= link_to restaurant_products_path(restaurant.id) do %>
+              <h3 class="btn btn-default"><%= restaurant.name %> products</h3>
+                  <% end %>
+
+            <%= link_to new_restaurant_product_path(restaurant.id) do %>
+              <h3 class="btn btn-default">Add a product</h3>
+                  <% end %>
+
           </p>
         </div>
       <%end%>

@@ -1,2 +1,12 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+<%= render 'shared/navbar', new_restaurant: @new_restaurant %>
+
+<h1>Add a new product to your restaurant</h1>
+
+    <%= simple_form_for([@restaurant, @product]) do |f| %>
+
+        <%= image_tag("https://res.cloudinary.com/dnie1qfbq/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1582631707/samples/food/dessert.jpg", class: "imagenewproduct", :width=>300, :height=>300, :crop=>"scale") %>
+        <%= f.input :name %>
+        <%= f.input :price %>
+        <%= f.input :description %>
+        <%=f.submit%>
+  <%end%>
