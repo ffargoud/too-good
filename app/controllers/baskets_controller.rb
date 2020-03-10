@@ -5,6 +5,7 @@ class BasketsController < ApplicationController
   def index
     # Will match with the basket show page
     @baskets = policy_scope(Basket).order(created_at: :asc)
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
   def show
@@ -37,6 +38,10 @@ class BasketsController < ApplicationController
   end
 
   def destroy
+    @basket = Basket.find(params[:id])
+    authorize @basket
+    @basket.destroy
+    redirect_to restaurant_baskets_path notice: "Bye bye #{@basket.name} basket"
   end
 
 private

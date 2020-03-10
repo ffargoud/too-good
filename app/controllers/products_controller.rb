@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = policy_scope(Product).order(created_at: :desc)
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
   def new

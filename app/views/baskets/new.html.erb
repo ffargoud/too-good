@@ -1,5 +1,7 @@
 <%= render 'shared/navbar', new_restaurant: @new_restaurant %>
 
+<div class="container">
+
 <h1>Add a new basket to my restaurant</h1>
 
 <p>This food is going to be wasted! Let's sell a discounted basket of products.</p>
@@ -9,7 +11,7 @@
         <%= image_tag("https://res.cloudinary.com/dnie1qfbq/image/upload/v1583754005/basket_pyoq7r.jpg", class: "imagenewbasket") %>
         <%= f.input :photo, as: :file %>
         <%= f.input :name %>
-        <%= f.input :basket_products, :label=>"Products" %>
+        <%= f.association :products, :label=>"Products", as: :check_boxes %>
         <%#= f.collection_select :basket_products, Product.all, :name :label =>"Products" %>
         <%= f.input :price %>
         <%= f.input :description %>
@@ -17,3 +19,5 @@
 
         <%=f.submit%>
   <%end%>
+
+</div>
