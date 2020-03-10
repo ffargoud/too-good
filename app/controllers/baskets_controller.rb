@@ -3,19 +3,20 @@ class BasketsController < ApplicationController
   skip_after_action :verify_authorized, only:[:index]
 
   def index
-    # Will match with the restaurant show page
-    @basket = policy_scope(Basket).order(created_at: :asc)
-end
+    # Will match with the basket show page
+    @baskets = policy_scope(Basket).order(created_at: :asc)
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
 
   def show
     @basket = Basket.find(params[:id])
+    authorize @basket
   end
 
   def new
     @basket = Basket.new
     @restaurant = Restaurant.find(params[:restaurant_id])
     authorize @basket
-
   end
 
   def create
@@ -37,12 +38,15 @@ end
   end
 
   def destroy
-
+    @basket = Basket.find(params[:id])
+    authorize @basket
+    @basket.destroy
+    redirect_to restaurant_baskets_path notice: "Bye bye #{@basket.name} basket"
   end
 
 private
 
   def params_baskets
-    params.require(:basket).permit(:name, :price, :description, :date, :stock, :restaurant_id)
+    params.require(:basket).permit(:name, :price, :description, :date, :stock, :restaurant_id, :photo)
   end
 end

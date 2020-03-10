@@ -1,3 +1,5 @@
+<%= render 'shared/navbar', new_restaurant: @new_restaurant %>
+
     <%= simple_form_for(@restaurant) do |f| %>
 
         <%= f.input :photo, as: :file %>

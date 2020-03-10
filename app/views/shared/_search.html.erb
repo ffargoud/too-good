@@ -1,10 +1,10 @@
 <%= form_tag restaurants_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
-    placeholder: "Find a restaurant"
+    class: "form-control-index",
+    placeholder: "  Find a restaurant..."
   %>
-  <%= button_tag do %>
+  <%= button_tag class: 'search-btn' do %>
     <i class="fas fa-search"></i>
   <% end %>
 <% end %>

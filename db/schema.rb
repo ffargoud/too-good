@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 2020_03_09_142335) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "restaurant_id"
+    t.index ["restaurant_id"], name: "index_products_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -99,5 +101,6 @@ ActiveRecord::Schema.define(version: 2020_03_09_142335) do
   add_foreign_key "basket_products", "baskets"
   add_foreign_key "basket_products", "products"
   add_foreign_key "baskets", "restaurants"
+  add_foreign_key "products", "restaurants"
   add_foreign_key "restaurants", "users"
 end

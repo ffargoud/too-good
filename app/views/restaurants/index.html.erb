@@ -61,10 +61,14 @@
             <% @restaurants.each do |restaurant| %>
               <%= link_to restaurant_path(restaurant), class: "resto-card" do %>
                 <div class="card-product">
-                  <img src="https://berlinfoodstories.com/wp-content/uploads/2020/02/Barra-Berlin-Neukolln-Restaurant-Feature-Food-1000x350.jpg" style="width: 200px"/>
-                  <div class="card-product-infos">
-                    <h2 class="product-title"><%= restaurant.name %></h2>
-                    <p>Product description with <strong>relevant info</strong> only.</p>
+                  <div class="img-title">
+                    <div class="card-product-img">
+                    <img src="https://berlinfoodstories.com/wp-content/uploads/2020/02/Barra-Berlin-Neukolln-Restaurant-Feature-Food-1000x350.jpg"/>
+                    </div>
+                    <div class="card-product-infos">
+                      <h2 class="product-title"><%= restaurant.name %></h2>
+                      <p>Product description with <strong>relevant info</strong> only.</p>
+                    </div>
                   </div>
                   <div class="card-product-specifics">
                     <p class="product-specific">
