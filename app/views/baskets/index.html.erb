@@ -10,10 +10,21 @@
         <h2><%= basket.name %></h2>
          <p><%= basket.description %></p>
           <p><%= basket.price %> €</p>
-          <p><%= basket.basket_products %></p>
+          <ul>
+            <% basket.basket_products.each do |basket_product| %>
+              <li><%= basket_product.product.name %></li>
+            <% end %>
+          </ul>
+
         </div>
         <div class="card-basket-infos">
-         <p><%= basket.stock %> available</p>
+         <%= link_to "Increase", update_stock_path(:stock_update => "increase", :basket_id => basket.id)
+           %>
+
+          <%= link_to "Decrease", update_stock_path(:stock_update => "decrease", :basket_id => basket.id)
+           %>
+
+           <%= basket.stock %>
         </div>
         <div class="card-basket-infos">
         <%= link_to restaurant_basket_path(params[:restaurant_id], basket.id), class: "btn btn-basket", method: :delete do %>
@@ -23,11 +34,11 @@
 
 
     </div>
-
+<br>
 
   <% end %>
 <br>
-    <%= link_to "Dashboard",dashboard_path, class: "btn btn-flat", style: "margin-bottom:100px, background: #D94630;" %>
+    <%= link_to "Dashboard", dashboard_path, class: "btn btn-flat", style: "margin-bottom:100px, background: #D94630;" %>
 
   <%= link_to "Add a basket", new_restaurant_basket_path(@restaurant.id), class: "btn btn-flat", style: "margin-bottom:100px, background: #D94630;" %>
 
