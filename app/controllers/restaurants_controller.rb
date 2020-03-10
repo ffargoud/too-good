@@ -24,6 +24,17 @@
   def show
     @restaurant = Restaurant.find(params[:id])
     authorize @restaurant
+
+    @markers = {
+        lat: @restaurant.latitude,
+        lng: @restaurant.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { restaurant: @restaurant })
+    }
+
+    @baskets = []
+    @restaurant.basket_ids.each do |id|
+      @baskets << Basket.find(id)
+    end
   end
 
   def new
