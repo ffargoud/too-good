@@ -5,58 +5,66 @@
 
 
     <% @restaurants.each do |restaurant| %>
-      <div class="card-trip">
-        <%=link_to restaurant_path(restaurant.id), class: "image-container" do %>
-          <% if restaurant.photo.attached? %>
-             <div class="image">
-              <%= cl_image_tag restaurant.photo.key,height: 300, width: 400, crop: :fill, class: "img-rounded" %>
+      <div class="card-dashboard">
+          <div class="card-dashboard-infos">
+            <%=link_to restaurant_path(restaurant.id) do %>
+              <% if restaurant.photo.attached? %>
+            <div class="img">
+              <%= cl_image_tag restaurant.photo.key %>
             </div>
-          <% else %>
-            <div class="image">
-              <%= cl_image_tag "https://res.cloudinary.com/dnie1qfbq/image/upload/v1582631708/samples/food/pot-mussels.jpg", height: 300, width: 400, crop: :fill, class: "img-rounded" %>
+              <% else %>
+            <div class="img">
+              <%= cl_image_tag "https://res.cloudinary.com/dnie1qfbq/image/upload/v1582631708/samples/food/pot-mussels.jpg", height: 300, width: 400, crop: :fill %>
             </div>
-          <% end %>
-        <% end %>
-      </div>
+              <% end %>
+            <% end %>
+          </div>
 
 
-      <div class="card-trip-infos">
-        <%= link_to restaurant_path(restaurant.id) do %>
-        <h2 class="myrestaurant-name"><%= restaurant.name %></h2>
-          <% end %>
-        <h4 class="myrestaurant-description"><%= restaurant.description %></h4>
+         <div class="card-dashboard-infos">
+           <%= link_to restaurant_path(restaurant.id) do %>
+            <h2 class="myrestaurant-name"><%= restaurant.name %></h2>
+              <% end %>
+            <p class="myrestaurant-description"><%= restaurant.description %></p>
+          </div>
 
-          <p>
+         <div class="card-dashboard-infos">
+
             <% if policy(restaurant).edit? %>
              <%= link_to edit_restaurant_path(restaurant.id) do %>
-             <h3 class="btn btn-default">Edit <%= restaurant.name %></h3>
+             <h3 class="btn-dashboard">Edit restaurant</h3>
             <% end %>
             <% end %>
-          </p>
-          <p>
+
             <% if policy(restaurant).destroy? %>
               <%= link_to restaurant_path(restaurant.id), method: :delete do %>
-                <h3 class="btn btn-default">Delete <%= restaurant.name %></h3>
-                  <% end %>
+              <h3 class="btn-dashboard">Delete restaurant</h3>
+              <% end %>
               <%end%>
 
+          </div>
+
+         <div class="card-dashboard-infos">
              <%= link_to restaurant_baskets_path(restaurant.id) do %>
-              <h3 class="btn btn-default"><%= restaurant.name %> baskets</h3>
+              <h3 class="btn-dashboard">Existing baskets</h3>
                   <% end %>
 
             <%= link_to new_restaurant_basket_path(restaurant.id) do %>
-              <h3 class="btn btn-default">Add a basket</h3>
+              <h3 class="btn-dashboard">Add a basket</h3>
                   <% end %>
+          </div>
 
+         <div class="card-dashboard-infos">
             <%= link_to restaurant_products_path(restaurant.id) do %>
-              <h3 class="btn btn-default"><%= restaurant.name %> products</h3>
+              <h3 class="btn-dashboard"><%= restaurant.name %> products</h3>
                   <% end %>
 
             <%= link_to new_restaurant_product_path(restaurant.id) do %>
-              <h3 class="btn btn-default">Add a product</h3>
+              <h3 class="btn-dashboard">Add a product</h3>
                   <% end %>
+          </div>
 
-          </p>
         </div>
-      <%end%>
+        <br>
+    <%end%>
   </div>
