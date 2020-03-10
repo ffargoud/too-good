@@ -7,7 +7,8 @@
     <div class="card-basket">
       <img src="https://res.cloudinary.com/dnie1qfbq/image/upload/v1583754005/basket1_muou5x.jpg" />
         <div class="card-basket-infos">
-        <h2><%= basket.name %></h2>
+        <h2><%= basket.name %>: <%= basket.stock %></h2>
+
          <p><%= basket.description %></p>
           <p><%= basket.price %> €</p>
           <ul>
@@ -18,13 +19,13 @@
 
         </div>
         <div class="card-basket-infos">
-         <%= link_to "Increase", update_stock_path(:stock_update => "increase", :basket_id => basket.id)
+          <div class="card-basket-stock">
+         <%= link_to "+", update_stock_path(:stock_update => "increase", :basket_id => basket.id), class: "btn btn-basket-stock"
            %>
 
-          <%= link_to "Decrease", update_stock_path(:stock_update => "decrease", :basket_id => basket.id)
+          <%= link_to "-", update_stock_path(:stock_update => "decrease", :basket_id => basket.id), class: "btn btn-basket-stock"
            %>
-
-           <%= basket.stock %>
+         </div>
         </div>
         <div class="card-basket-infos">
         <%= link_to restaurant_basket_path(params[:restaurant_id], basket.id), class: "btn btn-basket", method: :delete do %>
