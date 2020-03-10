@@ -5,10 +5,11 @@
 // }
 .banner-container {
   margin: auto;
-  background: white;
+  // background: white;
   width: 90%;
   height: auto;
   border-radius: 4px;
+  border: 1px solid lightgray;
 }
 
 .rest-banner {
@@ -32,7 +33,7 @@
   padding-top: 10px;
   width: 90%;
   margin: auto;
-  background:white;
+  // background: white;
   display: flex;
 
   .title-address {
@@ -61,7 +62,7 @@
 }
 
 .description {
-  background: white;
+  // background: white;
   margin: auto;
   width: 90%;
   display: flex;
@@ -69,9 +70,21 @@
 
   .content-box {
     border: 1px solid lightgray;
+    border-radius: 4px;
     padding: 15px;
     width: 70%;
-    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin-left: 10px;
+    background: white;
+
+    .infos {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 770px;
+    }
 
     p {
       margin-left: 10px;
@@ -83,11 +96,13 @@
     border: 1px solid lightgray;
     border-radius: 4px;
     height: 400px;
-    align-items: center;
-    justify-content: center;
+    margin-right: 35px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background: white;
 
     h2 {
       color: #E16B33;
+      text-align: center;
     }
 
     .btn-flat {
@@ -100,9 +115,39 @@
   }
 }
 
-.basket-cards {
-  background: white;
-  margin: auto;
+.lower-content {
   width: 90%;
-  height: 200px;
+  margin: auto;
+  // background: white;
+}
+
+.basket-cards {
+  padding-top: 20px;
+  // background: white;
+  width: 70%;
+  height: 1000px;
+
+
+  .todays-baskets {
+    margin-left: 30px;
+    font-weight: 800;
+  }
+
+  .card-list {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+.card-product {
+  display: flex;
+  border-radius: 4px;
+  margin-top: 15px;
+
+  .card-product-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
