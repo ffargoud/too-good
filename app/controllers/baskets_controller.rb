@@ -37,18 +37,6 @@ class BasketsController < ApplicationController
   def update
   end
 
-  def update_stock
-    @basket = Basket.find(params[:basket_id])
-    if params[:stock_update] == "increase"
-      @basket.stock += 1
-    else
-      @basket.stock -= 1
-    end
-    @basket.save!
-    authorize @basket
-    redirect_to restaurant_baskets_path(@basket.restaurant)
-  end
-
   def destroy
     @basket = Basket.find(params[:id])
     authorize @basket
@@ -59,6 +47,6 @@ class BasketsController < ApplicationController
 private
 
   def params_baskets
-    params.require(:basket).permit(:name, :price, :description, :date, :stock, :restaurant_id, :photo, product_ids: [])
+    params.require(:basket).permit(:name, :price, :description, :date, :stock, :restaurant_id, :photo)
   end
 end
