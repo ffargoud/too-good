@@ -1,6 +1,6 @@
 .card-basket {
   overflow: hidden;
-  height: 120px;
+  height: 250px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -9,7 +9,7 @@
 
 .card-basket img {
   height: 100%;
-  width: 120px;
+  width: 250px;
   object-fit: cover;
 }
 
@@ -17,6 +17,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: #495773;
 }
 
 .card-basket p {
@@ -29,4 +30,24 @@
 
 .card-basket .card-basket-infos {
   padding: 16px;
+}
+
+
+.btn-basket {
+  color: #F2C94C;
+  border: 1px solid #F2C94C;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-basket:hover {
+  opacity: 1;
+  color: #495773;
+}
+
+.basket-title {
+  color: #495773;
 }
