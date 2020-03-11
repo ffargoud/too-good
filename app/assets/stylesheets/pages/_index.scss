@@ -225,7 +225,6 @@ a.resto-card {
   display: flex;
 
   #map {
-    display: inline-block;
     border: 1px solid lightgray;
     border-radius: 4px;
     width: 40%;
@@ -233,6 +232,8 @@ a.resto-card {
     box-shadow: 0 0 15px lightgray;
     position: sticky;
     top: 0;
+    margin-top: 15px;
+    margin-left: 10px;
   }
 
   .card-list {
