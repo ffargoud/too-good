@@ -5,5 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :restaurants
+  has_many :orders
+
+  after_create :create_order
+
+  def create_order
+    Order.create(user: self)
+  end
 
 end

@@ -16,7 +16,6 @@
       <h1><%= @restaurant.name %></h1>
       <p>
         <i class="fas fa-utensils" style="color: #D94630"></i> <%= @restaurant.category %>
-
         <% if @restaurant.rating.nil? %>
           <% "No rating for now" %>
         <% else %>
@@ -28,7 +27,6 @@
             <i class="fas fa-star" style="display:inline; color: #DDDDDD"></i>
           <% end %>
         <% end %>
-
       </p>
     </div>
 
@@ -36,13 +34,11 @@
       <h3><i class="fas fa-map-marker-alt" style="color: #D94630"></i> <%= @restaurant.address %></h3>
       <p>Insert distance from user location here</p>
     </div>
-
   </div>
 </div>
 
 <div class="description">
-
-    <div class="all-content">
+  <div class="all-content">
     <div class="content-box">   <!-- Start of content box -->
       <div class="info-and-map">
         <div class="infos">
@@ -77,10 +73,9 @@
               <p><%= basket.description %></p>
               </div>
               <div class="cart-btn">
-                <%= link_to "Add to cart", "#", class: "btn btn-flat" %>
+                <%= link_to "Add to cart", restaurant_basket_order_baskets_path(@restaurant,basket,@order_basket), method: :post, class: "btn btn-flat" %>
               </div>
               </div>
-          <% else %>
           <% end %>
           <% end %>
 
@@ -94,12 +89,20 @@
       <h2>Cart</h2>
 
       <div class="cart-items">
-        <p> ITEM</p>
-        <p> ITEM</p>
-        <p> ITEM</p>
-        <p> ITEM</p>
-        <p> ITEM</p>
-        <p> ITEM</p>
+        <% @cart_baskets.each do |basket| %>
+          <div class="card-product">
+            <div class="card-product-infos">
+              <h2><%= basket.basket.name %></h2>
+              <p><%= basket.basket.description %></p>
+            </div>
+            <% @basket = basket.basket %>
+            <div class="remove-btn" style="margin-right: 10px;">
+              <%= link_to restaurant_basket_order_basket_path(@restaurant,@basket,basket), method: :delete do %>
+                <i class="fas fa-times" style="color: gray"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
 
       <%= link_to "Checkout", "#", class: "btn btn-flat" %>

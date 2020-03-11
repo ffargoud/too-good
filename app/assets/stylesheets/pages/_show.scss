@@ -112,7 +112,22 @@
     }
 
     .cart-items {
-      height: 75%;
+      height: 290px;
+      background: #DDDDDD;
+      margin-left: 30px;
+      margin-right: 30px;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+
+      .card-product {
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 5px;
+      }
     }
   }
 }

@@ -35,6 +35,10 @@
     @restaurant.basket_ids.each do |id|
       @baskets << Basket.find(id)
     end
+
+    @basket_order = OrderBasket.new
+
+    @cart_baskets = current_user.orders.last.order_baskets
   end
 
   def new

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :restaurants do
-    resources :baskets
+    resources :baskets do
+      resources :order_baskets, only: [:create, :destroy]
+    end
     resources :products
   end
 
