@@ -1,35 +1,41 @@
 <%= render 'shared/navbar' %>
 
 <div class="container">
-<h1 class="basket-title">My baskets list</h1>
+<h1 class="basket-title">Baskets list</h1>
 
 <% @baskets.each do |basket| %>
     <div class="card-basket">
       <%= cl_image_tag basket.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="card-basket-infos">
-        <h2><%= basket.name %>: <%= basket.stock %></h2>
+        <h2><%= basket.name %></h2>
+
 
          <p><%= basket.description %></p>
           <p><%= basket.price %> €</p>
-          <ul>
+          <p><ul>
             <% basket.basket_products.each do |basket_product| %>
               <li><%= basket_product.product.name %></li>
             <% end %>
-          </ul>
+          </ul></p>
 
         </div>
         <div class="card-basket-infos">
+          <div class="card-basket-stock" style="text-align: center">
+         <%= basket.stock %>
+          </div>
+                   <br>         <br>    <br>
           <div class="card-basket-stock">
          <%= link_to "+", update_stock_path(:stock_update => "increase", :basket_id => basket.id), class: "btn btn-basket-stock"
            %>
 
           <%= link_to "-", update_stock_path(:stock_update => "decrease", :basket_id => basket.id), class: "btn btn-basket-stock"
            %>
+
          </div>
         </div>
         <div class="card-basket-infos">
         <%= link_to restaurant_basket_path(params[:restaurant_id], basket.id), class: "btn btn-basket", method: :delete do %>
-                Delete <%= basket.name %>
+                Delete basket
           <% end %>
         </div>
 
