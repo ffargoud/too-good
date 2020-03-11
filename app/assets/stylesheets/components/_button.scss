@@ -3,7 +3,7 @@ font-family: Monserrat;
 color:  #495773 !important;
 text-transform: uppercase;
 background:  #F0EBE5;
-padding: 20px;
+padding: 15px;
 border: 2px solid  #495773 !important;
 border-radius: 6px;
 display: inline-block;
@@ -11,6 +11,26 @@ transition: all 0.3s ease 0s;
 }
 
 #navbarDropdown:hover {
+font-family: Monserrat;
+color: #D94630 !important;
+border-radius: 50px;
+border-color: #D94630 !important;
+transition: all 0.3s ease 0s;
+}
+
+#HomeButton {
+font-family: Monserrat;
+color:  #495773 !important;
+text-transform: uppercase;
+background:  #F0EBE5;
+padding: 15px;
+border: 2px solid  #495773 !important;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+
+#HomeButton:hover {
 font-family: Monserrat;
 color: #D94630 !important;
 border-radius: 50px;
