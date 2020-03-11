@@ -14,9 +14,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= f.input :photo, as: :file %>
+        <%= f.input :photo, as: :file, :label=>"Photo:" %>
         <%= f.input :name %>
-        <%= f.input :description, :label=>"Restaurant description" %>
+        <%= f.input :description, :label=>"Restaurant description:" %>
         <%= f.input :address %>
         <%= f.input :category %>
         <%= f.input :price_range , :label=>"Price discounted" %>
