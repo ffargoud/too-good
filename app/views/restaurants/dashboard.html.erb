@@ -1,6 +1,6 @@
 <%= render 'shared/navbar', new_restaurant: @new_restaurant %>
 <div class="container">
-<h1>My dashboard</h1>
+<h1>Restaurant dashboard</h1>
 
 
 
@@ -23,7 +23,7 @@
 
          <div class="card-dashboard-infos-text">
            <%= link_to restaurant_path(restaurant.id) do %>
-            <h2 class="myrestaurant-name"><%= restaurant.name %></h2>
+            <h2><%= restaurant.name %></h2>
               <% end %>
             <p class="myrestaurant-description"><%= restaurant.description %></p>
           </div>

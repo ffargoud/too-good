@@ -3,6 +3,7 @@
   height: 250px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,9 +20,10 @@
   font-weight: bold;
   margin: 0;
   color: #495773;
+  font-family: Montserrat;
 }
 
-.card-basket p {
+.card-basket p, ul {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -30,12 +32,12 @@
 }
 
 .card-basket .card-basket-infos {
-  padding: 16px;
+  padding-right: 56px;
 }
 
 .card-basket .card-basket-infos ul {
   font-size: 14px;
-  font-weight: bold;
+  font-family: Montserrat;
   margin: 0;
   color: #495773;
 
@@ -80,5 +82,6 @@
 }
 
 .basket-title {
-  color: #495773;
+  color: #E16B33;
+  font-family: Montserrat;
 }
