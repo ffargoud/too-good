@@ -65,7 +65,20 @@
     <h2>Cart</h2>
 
     <div class="cart-items">
-
+      <% @cart_baskets.each do |basket| %>
+        <div class="card-product">
+          <div class="card-product-infos">
+            <h2><%= basket.basket.name %></h2>
+            <p><%= basket.basket.description %></p>
+          </div>
+          <% @basket = basket.basket %>
+          <div class="remove-btn" style="margin-right: 10px;">
+            <%= link_to restaurant_basket_order_basket_path(@restaurant,@basket,basket), method: :delete do %>
+              <i class="fas fa-times" style="color: gray"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     </div>
 
     <%= link_to "Checkout", "#", class: "btn btn-flat" %>
@@ -88,9 +101,9 @@
           </div>
 
           <div class="cart-btn">
-            <%= link_to "Add to cart", "#", class: "btn btn-flat" %>
-          </div>
 
+            <%= link_to "Add to cart", restaurant_basket_order_baskets_path(@restaurant,basket,@order_basket), method: :post, class: "btn btn-flat" %>
+          </div>
         </div>
       <% end %>
     </div>

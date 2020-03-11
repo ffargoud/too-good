@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :restaurants
+  has_many :orders
 
   after_create :create_order
 

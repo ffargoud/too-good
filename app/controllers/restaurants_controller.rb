@@ -36,10 +36,9 @@
       @baskets << Basket.find(id)
     end
 
-    orders = Order.all
-    @order = orders.select do |order|
-      order.user_id == current_user.id
-    end
+    @basket_order = OrderBasket.new
+
+    @cart_baskets = current_user.orders.last.order_baskets
   end
 
   def new
