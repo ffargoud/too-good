@@ -1,3 +1,14 @@
+body {
+  background-color: #F0EBE5;
+}
+
+h1 {
+color:#E16B33;
+margin-top: 20px;
+margin-bottom:20px;
+font-family: Montserrat;
+}
+
 .card-dashboard {
   overflow: hidden;
   height: 250px;
@@ -5,6 +16,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 4px;
 }
 
 .card-dashboard img {
@@ -14,9 +26,11 @@
 }
 
 .card-dashboard h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 800;
+font-size: 32px;
+line-height: 39px;
 }
 
 .card-dashboard p {
@@ -28,7 +42,7 @@
 }
 
 .card-dashboard .card-dashboard-infos {
-  padding: 16px;
+  padding-right: 16px;
   font-size: 10px;
 }
 
@@ -37,6 +51,17 @@
   font-size: 16px;
 }
 
+.card-dashboard-infos-text {
+  padding: 16px;
+  font-size: 10px;
+  flex-grow: 1;
+  width: 60%;
+    h2 {
+      color: #495773;
+      font-size: 16px;
+    }
+
+}
 
 .btn-dashboard {
   color: #E16B33;
@@ -46,12 +71,11 @@
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
-}
+   }
 
 .btn-dashboard:hover {
   opacity: 1;
   color: #495773;
-  font-weight: bold;
 }

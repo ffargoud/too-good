@@ -5,8 +5,10 @@
   // padding: 150px 0;
   margin-top: 0px;
   height: 620px;
+
   .container {
     padding-top: 250px;
+    font-family: Montserrat;
   }
 }
 
@@ -15,11 +17,13 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-style: normal;
   font-weight: bold;
+  font-family: Montserrat;
+
 }
 
 .banner p {
   font-size: 20px;
-  color: black;
+  color: #495773;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
@@ -43,12 +47,13 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #F0EBE5;
     background-clip: border-box;
     border: 1px solid #e5e5e5;
     border-radius: 0.25rem;
     margin: auto;
     margin-top: 0 px;
+
 }
 .nav-pills .nav-link.active {
     border: 1px solid gray;
@@ -67,12 +72,55 @@
 }
 
 #alert-html-tab {
-  margin-left: 100px;
+margin-left: 100px;
+font-family: Monserrat;
+color:  #495773 !important;
+text-transform: uppercase;
+background:  #F0EBE5;
+padding: 12px;
+border: 2px solid  #495773 !important;
+border-radius: 6px;
+transition: all 0.3s ease 0s;
+}
+
+#alert-html-tab:hover {
+font-family: Monserrat;
+color: #D94630 !important;
+border-radius: 50px;
+border-color: #D94630 !important;
+transition: all 0.3s ease 0s;
+}
+
+#alert-css-tab {
+margin-left: 100px;
+font-family: Monserrat;
+color:  #495773 !important;
+text-transform: uppercase;
+background:  #F0EBE5;
+padding: 12px;
+border: 2px solid  #495773 !important;
+border-radius: 6px;
+transition: all 0.3s ease 0s;
+}
+
+#alert-css-tab:hover {
+font-family: Monserrat;
+color: #D94630 !important;
+border-radius: 50px;
+border-color: #D94630 !important;
+transition: all 0.3s ease 0s;
 }
 
 .card .card-header {
   // border-bottom: 1px solid gray;
   margin-left: 0px;
+  background: #F0EBE5;
+}
+
+#view {
+  background: #F0EBE5;
+
+
 }
 
 .card .card-container-title {
@@ -225,7 +273,6 @@ a.resto-card {
   display: flex;
 
   #map {
-    display: inline-block;
     border: 1px solid lightgray;
     border-radius: 4px;
     width: 40%;
@@ -233,6 +280,8 @@ a.resto-card {
     box-shadow: 0 0 15px lightgray;
     position: sticky;
     top: 0;
+    margin-top: 15px;
+    margin-left: 10px;
   }
 
   .card-list {

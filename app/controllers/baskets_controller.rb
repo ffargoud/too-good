@@ -44,9 +44,21 @@ class BasketsController < ApplicationController
     redirect_to restaurant_baskets_path notice: "Bye bye #{@basket.name} basket"
   end
 
+    def update_stock
+    @basket = Basket.find(params[:basket_id])
+    if params[:stock_update] == "increase"
+      @basket.stock += 1
+    else
+      @basket.stock -= 1
+    end
+    @basket.save!
+    authorize @basket
+    redirect_to restaurant_baskets_path(@basket.restaurant)
+  end
+
 private
 
   def params_baskets
-    params.require(:basket).permit(:name, :price, :description, :date, :stock, :restaurant_id, :photo)
-  end
+     params.require(:basket).permit(:name, :price, :description, :date, :stock, :restaurant_id, :photo, product_ids: [])
+   end
 end
