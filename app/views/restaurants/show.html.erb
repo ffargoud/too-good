@@ -42,63 +42,68 @@
 
 <div class="description">
 
-  <div class="content-box">
-    <div class="infos">
-      <p><%= @restaurant.description %></p>
-      <p><i class="fas fa-shopping-bag" style="color: #D94630"></i> At closing time, the employees at <%= @restaurant.name %> will use leftover food items to make baskets.</p>
-      <p><i class="fas fa-shopping-bag" style="color: #D94630"></i> The products in these baskets and their availability changes daily.</p>
-      <p><i class="fas fa-shopping-bag" style="color: #D94630"></i> At <%= @restaurant.name %> you can expect to find some of the following products: x, y, z.</p>
-    </div>
+    <div class="all-content">
+    <div class="content-box">   <!-- Start of content box -->
+      <div class="info-and-map">
+        <div class="infos">
+          <p><%= @restaurant.description %></p>
+          <p><i class="fas fa-shopping-bag" style="color: #D94630"></i> At closing time, the employees at <%= @restaurant.name %> will use leftover food items to make baskets.</p>
+          <p><i class="fas fa-shopping-bag" style="color: #D94630"></i> The products in these baskets and their availability changes daily.</p>
+          <p><i class="fas fa-shopping-bag" style="color: #D94630"></i> At <%= @restaurant.name %> you can expect to find some of the following products: x, y, z.</p>
+        </div>
 
-    <div
-      id="map"
-      style="width: 370px;
-      height: 370px;
-      border-radius: 4px;
-      border: 1px solid lightgray;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
-  </div>
+        <div
+          id="map"
+          style="width: 370px;
+          height: 370px;
+          border-radius: 4px;
+          border: 1px solid lightgray;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div> <!-- End of info and map -->
+    </div>   <!-- End of content box -->
 
-  <div class="cart">
+    <div class="bottom-content"> <!-- Start of basket cards -->
+      <div class="basket-cards">
+        <h2 style="color: #E16B33" class="todays-baskets">Today's baskets:</h2>
+        <div class="card-list">
+          <% @baskets.each do |basket| %>
+            <div class="card-product">
 
-    <h2>Cart</h2>
+              <img src="https://res.cloudinary.com/dnie1qfbq/image/upload/v1582631708/samples/food/pot-mussels.jpg" />
 
-    <div class="cart-items">
-      <p>ITEM</p>
-      <p>ITEM</p>
-      <p>ITEM</p>
-      <p>ITEM</p>
-      <p>ITEM</p>
-      <p>ITEM</p>
-    </div>
+              <div class="card-product-infos">
+                <h2><%= basket.name %></h2>
+                <p><%= basket.description %></p>
+              </div>
 
-    <%= link_to "Checkout", "#", class: "btn btn-flat" %>
+              <div class="cart-btn">
+                <%= link_to "Add to cart", "#", class: "btn btn-flat" %>
+              </div>
 
-  </div>
-</div>
-
-<div class="lower-content">
-  <div class="basket-cards">
-    <h2 style="color: #E16B33" class="todays-baskets">Today's baskets:</h2>
-    <div class="card-list">
-      <% @baskets.each do |basket| %>
-        <div class="card-product">
-
-          <img src="https://res.cloudinary.com/dnie1qfbq/image/upload/v1582631708/samples/food/pot-mussels.jpg" />
-
-          <div class="card-product-infos">
-            <h2><%= basket.name %></h2>
-            <p><%= basket.description %></p>
-          </div>
-
-          <div class="cart-btn">
-            <%= link_to "Add to cart", "#", class: "btn btn-flat" %>
-          </div>
+            </div>
+          <% end %>
 
         </div>
-      <% end %>
+           </div>
+    </div> <!-- End of basket cards -->
+  </div> <!-- End of all content -->
+
+  <div class="cart-div">
+    <div class="cart">
+      <h2>Cart</h2>
+
+      <div class="cart-items">
+        <p> ITEM</p>
+        <p> ITEM</p>
+        <p> ITEM</p>
+        <p> ITEM</p>
+        <p> ITEM</p>
+        <p> ITEM</p>
+      </div>
+
+      <%= link_to "Checkout", "#", class: "btn btn-flat" %>
     </div>
   </div>
 </div>
