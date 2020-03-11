@@ -1,0 +1,26 @@
+
+#dropdown
+{
+background-color: #F0EBE5;
+color: #495773;
+font-family: Monserrat;
+text-align: center;
+border-radius: 6px;
+border: 2px solid  #495773 !important;
+
+
+}
+
+.dropdown-item {
+color:  #495773 !important;
+ }
+
+ .dropdown-item:hover {
+color: #D94630 !important;
+border-color: #D94630 !important;
+transition: all 0.3s ease 0s;
+font-weight: bold;
+background-color: #F0EBE5;
+
+ }
+
