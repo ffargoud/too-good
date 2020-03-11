@@ -42,13 +42,25 @@ line-height: 39px;
 }
 
 .card-dashboard .card-dashboard-infos {
-  padding: 16px;
+  padding-right: 16px;
   font-size: 10px;
 }
 
 .card-dashboard .card-dashboard-infos h2 {
   color: #495773;
   font-size: 16px;
+}
+
+.card-dashboard-infos-text {
+  padding: 16px;
+  font-size: 10px;
+  flex-grow: 1;
+  width: 60%;
+    h2 {
+      color: #495773;
+      font-size: 16px;
+    }
+
 }
 
 .btn-dashboard {
@@ -61,7 +73,7 @@ line-height: 39px;
   transition: opacity 0.3s ease;
   font-size: 14px;
   text-align: center;
-}
+   }
 
 .btn-dashboard:hover {
   opacity: 1;
