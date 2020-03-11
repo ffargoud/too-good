@@ -6,9 +6,10 @@ puts "Destroying database"
 
 
 Basket.destroy_all
+Product.destroy_all
 Restaurant.destroy_all
 User.destroy_all
-Product.destroy_all
+
 
 puts "Seeding fresh new stuff..."
 
