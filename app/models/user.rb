@@ -6,4 +6,10 @@ class User < ApplicationRecord
 
   has_many :restaurants
 
+  after_create :create_order
+
+  def create_order
+    Order.create(user: self)
+  end
+
 end

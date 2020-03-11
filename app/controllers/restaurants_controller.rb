@@ -35,6 +35,11 @@
     @restaurant.basket_ids.each do |id|
       @baskets << Basket.find(id)
     end
+
+    orders = Order.all
+    @order = orders.select do |order|
+      order.user_id == current_user.id
+    end
   end
 
   def new

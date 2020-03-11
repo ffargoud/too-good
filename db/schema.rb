@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_11_110516) do
+ActiveRecord::Schema.define(version: 2020_03_11_115705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,19 +58,19 @@ ActiveRecord::Schema.define(version: 2020_03_11_110516) do
   end
 
   create_table "order_baskets", force: :cascade do |t|
-    t.string "create"
-    t.string "destroy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "order_id"
+    t.integer "basket_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "baskets_id"
+    t.bigint "user_id"
+    t.bigint "basket_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["baskets_id"], name: "index_orders_on_baskets_id"
-    t.index ["users_id"], name: "index_orders_on_users_id"
+    t.index ["basket_id"], name: "index_orders_on_basket_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -117,8 +117,8 @@ ActiveRecord::Schema.define(version: 2020_03_11_110516) do
   add_foreign_key "basket_products", "baskets"
   add_foreign_key "basket_products", "products"
   add_foreign_key "baskets", "restaurants"
-  add_foreign_key "orders", "baskets", column: "baskets_id"
-  add_foreign_key "orders", "users", column: "users_id"
+  add_foreign_key "orders", "baskets"
+  add_foreign_key "orders", "users"
   add_foreign_key "products", "restaurants"
   add_foreign_key "restaurants", "users"
 end
