@@ -69,20 +69,19 @@
         <h2 style="color: #E16B33" class="todays-baskets">Today's baskets:</h2>
         <div class="card-list">
           <% @baskets.each do |basket| %>
-            <div class="card-product">
-
+            <% if basket.stock > 0 %>
+              <div class="card-product">
               <img src="https://res.cloudinary.com/dnie1qfbq/image/upload/v1582631708/samples/food/pot-mussels.jpg" />
-
               <div class="card-product-infos">
-                <h2><%= basket.name %></h2>
-                <p><%= basket.description %></p>
+              <h2><%= basket.name %></h2>
+              <p><%= basket.description %></p>
               </div>
-
               <div class="cart-btn">
                 <%= link_to "Add to cart", "#", class: "btn btn-flat" %>
               </div>
-
-            </div>
+              </div>
+          <% else %>
+          <% end %>
           <% end %>
 
         </div>
