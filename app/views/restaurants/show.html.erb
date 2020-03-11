@@ -16,7 +16,6 @@
       <h1><%= @restaurant.name %></h1>
       <p>
         <i class="fas fa-utensils" style="color: #D94630"></i> <%= @restaurant.category %>
-
         <% if @restaurant.rating.nil? %>
           <% "No rating for now" %>
         <% else %>
