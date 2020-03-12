@@ -29,7 +29,11 @@
         <% @restaurants.each do |restaurant| %>
         <%= link_to restaurant_path(restaurant), class: "resto-card" do %>
           <div class="card-trip">
-            <img src="https://berlinfoodstories.com/wp-content/uploads/2020/02/Barra-Berlin-Neukolln-Restaurant-Feature-Food-1000x350.jpg" />
+           <% if restaurant.photo.attached? %>
+              <%= cl_image_tag restaurant.photo.key %>
+              <% else %>
+              <%= cl_image_tag "https://res.cloudinary.com/dnie1qfbq/image/upload/v1582631708/samples/food/pot-mussels.jpg", height: 300, width: 400, crop: :fill %>
+              <% end %>
             <div class="card-trip-infos">
               <div>
                 <h2 class='restaurant-name'><%= restaurant.name %></h2>
