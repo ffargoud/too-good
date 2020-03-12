@@ -11,6 +11,11 @@ class OrdersController < ApplicationController
   def destroy
   end
 
+  def show
+    @order = current_user.orders.last
+    authorize @order
+  end
+
   private
 
   def params_orders
