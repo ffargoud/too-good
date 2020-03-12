@@ -81,6 +81,7 @@ padding: 12px;
 border: 2px solid  #495773 !important;
 border-radius: 6px;
 transition: all 0.3s ease 0s;
+justify-content: space-between;
 }
 
 #alert-html-tab:hover {
@@ -92,7 +93,7 @@ transition: all 0.3s ease 0s;
 }
 
 #alert-css-tab {
-margin-left: 100px;
+
 font-family: Monserrat;
 color:  #495773 !important;
 text-transform: uppercase;
@@ -101,6 +102,7 @@ padding: 12px;
 border: 2px solid  #495773 !important;
 border-radius: 6px;
 transition: all 0.3s ease 0s;
+justify-content: space-between;
 }
 
 #alert-css-tab:hover {
@@ -341,3 +343,6 @@ a.resto-card {
 }
 
 
+.orange  {
+  background-color: #F2C94C !important;
+}
