@@ -106,3 +106,24 @@
     </div>
   </div>
 </div>
+
+
+<script>
+ const target = document.getElementById('alert-css-tab');
+  const target2 = document.getElementById('alert-html-tab');
+
+console.log(target);
+ target.addEventListener("click", (event) => {
+ // event.currentTarget.classList.toggle("orange");
+ target.className = "nav-link show orange";
+ target2.className = "nav-link show";
+
+ // target2.currentTarget.classList.toggle("orange");
+});
+
+  target2.addEventListener("click", (event) => {
+  target2.className = "nav-link show orange";
+  target.className = "nav-link show";
+
+});
+</script>
