@@ -104,8 +104,7 @@
           </div>
         <% end %>
       </div>
-
-      <%= link_to "Checkout", "#", class: "btn btn-flat" %>
+      <%= link_to "Checkout", order_path(current_user.orders.last), class: "btn btn-flat" %>
     </div>
   </div>
 </div>
